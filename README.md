@@ -1,4 +1,4 @@
-# mac_p2_first_page
+# Quiz_App_By_Mac
 
 A new Flutter project.
 
