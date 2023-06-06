@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mac_p2_first_page/models/questions.dart';
 import 'package:mac_p2_first_page/widget/questions_summary.dart';
+import 'package:mac_p2_first_page/pages/quiz.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({super.key, required this.chosenAnswers});
+  const ResultsScreen(
+      {super.key, required this.chosenAnswers, required this.onRestart});
 
   final List<String> chosenAnswers;
+  final void Function() onRestart;
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
@@ -24,6 +27,12 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final summaryData = getSummaryData();
+    final numTotalQuestions = questions.length;
+    final numCorrectQuestions = summaryData.where((data) {
+      return data['user_answer'] == data['correct_answer'];
+    }).length;
+
     return SizedBox(
         width: double.infinity,
         child: Container(
@@ -32,15 +41,23 @@ class ResultsScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Text("You Answerd X out of Y questions correctly!"),
+              Text(
+                  "You Answerd $numCorrectQuestions out of $numTotalQuestions questions correctly!"),
               const SizedBox(
                 height: 30,
               ),
-              QuestionsSummary(getSummaryData()),
+              QuestionsSummary(summaryData),
               const SizedBox(
                 height: 30,
               ),
-              TextButton(onPressed: () {}, child: const Text("Restart Test"))
+              TextButton.icon(
+                onPressed: onRestart,
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.white,
+                ),
+                icon: const Icon(Icons.refresh),
+                label: const Text('Restart Quiz!'),
+              )
             ],
           ),
         ));
