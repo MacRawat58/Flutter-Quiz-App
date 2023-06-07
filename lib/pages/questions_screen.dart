@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mac_p2_first_page/widget/answer_button.dart';
 
-import '../models/questions.dart';
+import '../data/questions.dart';
 
 class QuestionScreen extends StatefulWidget {
   const QuestionScreen({super.key, required this.onSelectAnswer});

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mac_p2_first_page/models/questions.dart';
-import 'package:mac_p2_first_page/widget/questions_summary.dart';
-import 'package:mac_p2_first_page/pages/quiz.dart';
+import 'package:mac_p2_first_page/data/questions.dart';
+import 'package:mac_p2_first_page/questions_summary/questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen(
@@ -41,8 +40,16 @@ class ResultsScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                  "You Answerd $numCorrectQuestions out of $numTotalQuestions questions correctly!"),
+              Container(
+                
+                child: Text(
+                  "You Answerd $numCorrectQuestions out of $numTotalQuestions questions correctly!",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 30,
               ),

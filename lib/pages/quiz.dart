@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mac_p2_first_page/pages/questions_screen.dart';
 import 'package:mac_p2_first_page/pages/start_screen.dart';
-import 'package:mac_p2_first_page/models/questions.dart';
+import 'package:mac_p2_first_page/data/questions.dart';
 import 'package:mac_p2_first_page/pages/results_screen.dart';
 
 class Quiz extends StatefulWidget {
