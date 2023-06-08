@@ -40,14 +40,11 @@ class ResultsScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Container(
-                
-                child: Text(
-                  "You Answerd $numCorrectQuestions out of $numTotalQuestions questions correctly!",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w600,
-                  ),
+              Text(
+                "You Answerd $numCorrectQuestions out of $numTotalQuestions questions correctly!",
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               const SizedBox(

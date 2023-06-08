@@ -27,7 +27,8 @@ class SummaryData extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30)),
                   child: Text(
                     ((data['question_index'] as int) + 1).toString(),
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -40,7 +41,7 @@ class SummaryData extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text((data['question'] as String),
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold)),
                     ),
                     const SizedBox(
@@ -61,7 +62,7 @@ class SummaryData extends StatelessWidget {
                     ),
                     Text(
                       (data['correct_answer'] as String),
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.green,
                           fontSize: 16,
                           fontWeight: FontWeight.w400),
